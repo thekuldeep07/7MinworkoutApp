@@ -72,16 +72,26 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             exerciseTimer!!.cancel()
             exerciseProgress = 0
         }
+        tts!!.stop()
+        tts!!.shutdown()
 
-        if(tts!=null){
-            tts!!.stop()
-            tts!!.shutdown()
-        }
 
-        if(player!=null){
-            player!!.stop()
-        }
+        player!=null
+        player!!.stop()
+
+
         super.onDestroy()
+    }
+
+    override fun onStop() {
+        tts!!.stop()
+        tts!!.shutdown()
+
+
+        player!=null
+        player!!.stop()
+        super.onStop()
+        finish()
     }
 
     /**
