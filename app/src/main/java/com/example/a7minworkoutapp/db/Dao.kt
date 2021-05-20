@@ -1,10 +1,11 @@
-package com.example.a7minworkoutapp
+package com.example.a7minworkoutapp.db
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import com.example.a7minworkoutapp.models.Dates
 
 @Dao
 interface Dao {

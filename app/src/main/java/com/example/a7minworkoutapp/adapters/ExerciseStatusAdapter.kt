@@ -1,4 +1,4 @@
-package com.example.a7minworkoutapp
+package com.example.a7minworkoutapp.adapters
 
 import android.content.Context
 import android.graphics.Color
@@ -7,9 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.example.a7minworkoutapp.models.ExerciseModel
+import com.example.a7minworkoutapp.R
 import kotlinx.android.synthetic.main.item_exercise_status.view.*
 
-class ExerciseStatusAdapter(val items:ArrayList<ExerciseModel>,val context:Context):
+class ExerciseStatusAdapter(val items:ArrayList<ExerciseModel>, val context:Context):
     RecyclerView.Adapter<
             ExerciseStatusAdapter.ViewHolder>() {
 
@@ -26,19 +28,19 @@ class ExerciseStatusAdapter(val items:ArrayList<ExerciseModel>,val context:Conte
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val model:ExerciseModel = items[position]
+        val model: ExerciseModel = items[position]
         holder.tvItem.text= model.getId().toString()
         if(model.getIsSelected()){
             holder.tvItem.background =
-                    ContextCompat.getDrawable(context,R.drawable.item_cicrcular_thin_accent_border)
+                    ContextCompat.getDrawable(context, R.drawable.item_cicrcular_thin_accent_border)
             holder.tvItem.setTextColor(Color.parseColor("#212121"))
         }else if (model.getIsCompleted()){
             holder.tvItem.background =
-                    ContextCompat.getDrawable(context,R.drawable.item_circular_color_accent_background)
+                    ContextCompat.getDrawable(context, R.drawable.item_circular_color_accent_background)
             holder.tvItem.setTextColor(Color.parseColor("#FFFFFF"))
         }else{
             holder.tvItem.background =
-                    ContextCompat.getDrawable(context,R.drawable.item_ciruclar_color_gray_bg)
+                    ContextCompat.getDrawable(context, R.drawable.item_ciruclar_color_gray_bg)
             holder.tvItem.setTextColor(Color.parseColor("#212121"))
         }
 

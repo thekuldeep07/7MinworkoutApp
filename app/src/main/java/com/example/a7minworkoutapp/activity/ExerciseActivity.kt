@@ -1,4 +1,4 @@
-package com.example.a7minworkoutapp
+package com.example.a7minworkoutapp.activity
 
 import android.app.Dialog
 import android.content.Intent
@@ -9,9 +9,12 @@ import android.os.CountDownTimer
 import android.speech.tts.TextToSpeech
 import android.util.Log
 import android.view.View
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
+import com.example.a7minworkoutapp.utility.Constants
+import com.example.a7minworkoutapp.models.ExerciseModel
+import com.example.a7minworkoutapp.R
+import com.example.a7minworkoutapp.adapters.ExerciseStatusAdapter
 import kotlinx.android.synthetic.main.activity_exercise.*
 import kotlinx.android.synthetic.main.dialog_custom_back.*
 import java.lang.Exception
@@ -35,7 +38,7 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
     private var player:MediaPlayer?= null
 
-    private var exerciseAdapter :ExerciseStatusAdapter ? = null
+    private var exerciseAdapter : ExerciseStatusAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -89,7 +92,7 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
      */
     private fun setupRestView() {
         try {
-            player = MediaPlayer.create(applicationContext,R.raw.press_start)
+            player = MediaPlayer.create(applicationContext, R.raw.press_start)
             player!!.isLooping = false
             player!!.start()
 
@@ -213,7 +216,7 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
                 } else {
                     finish()
-                    val intent = Intent(this@ExerciseActivity,FinishActivity::class.java)
+                    val intent = Intent(this@ExerciseActivity, FinishActivity::class.java)
                     startActivity(intent)
 
 

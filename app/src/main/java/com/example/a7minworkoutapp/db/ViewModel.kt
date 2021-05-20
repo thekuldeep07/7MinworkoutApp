@@ -1,9 +1,10 @@
-package com.example.a7minworkoutapp
+package com.example.a7minworkoutapp.db
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
+import com.example.a7minworkoutapp.models.Dates
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -25,7 +26,7 @@ class ViewModel(application: Application):AndroidViewModel(application)
       }
   }
 
-  fun addDate(date:Dates) {
+  fun addDate(date: Dates) {
       viewModelScope.launch (Dispatchers.IO){
           repository.insert(date)
       }

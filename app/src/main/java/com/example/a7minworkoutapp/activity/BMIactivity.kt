@@ -1,12 +1,11 @@
-package com.example.a7minworkoutapp
+package com.example.a7minworkoutapp.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Toast
+import com.example.a7minworkoutapp.R
 import kotlinx.android.synthetic.main.activity_b_m_iactivity.*
-import kotlinx.android.synthetic.main.activity_exercise.*
 import java.math.BigDecimal
 import java.math.RoundingMode
 
@@ -81,7 +80,7 @@ class BMIactivity : AppCompatActivity() {
 
         makeVisibleMetrUnitsView()
         rgUnits.setOnCheckedChangeListener { group, checkedId ->
-            if(checkedId==R.id.rbMetricUnits){
+            if(checkedId== R.id.rbMetricUnits){
                 makeVisibleMetrUnitsView()
             }
             else{

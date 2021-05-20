@@ -1,4 +1,7 @@
-package com.example.a7minworkoutapp
+package com.example.a7minworkoutapp.utility
+
+import com.example.a7minworkoutapp.models.ExerciseModel
+import com.example.a7minworkoutapp.R
 
 class Constants {
     companion object{

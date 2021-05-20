@@ -1,13 +1,14 @@
-package com.example.a7minworkoutapp
+package com.example.a7minworkoutapp.adapters
 
 import android.content.Context
 import android.graphics.Color
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.a7minworkoutapp.models.Dates
+import com.example.a7minworkoutapp.R
 import kotlinx.android.synthetic.main.item_history.view.*
 
 class AdapterDates(private val context: Context):RecyclerView.Adapter<AdapterDates.ViewHolder>() {
@@ -18,12 +19,12 @@ class AdapterDates(private val context: Context):RecyclerView.Adapter<AdapterDat
         val dateView : TextView ? = itemView.findViewById(R.id.tvItemDate)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AdapterDates.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_history,parent,false)
         )
     }
 
-    override fun onBindViewHolder(holder: AdapterDates.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val currentItem = allDates[position]
         holder.itemView.tvItemDate.text=currentItem.description
         holder.itemView.tvPositionDate.text= (position+1).toString()

@@ -1,20 +1,18 @@
-package com.example.a7minworkoutapp
+package com.example.a7minworkoutapp.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.room.Room
+import com.example.a7minworkoutapp.models.Dates
+import com.example.a7minworkoutapp.R
+import com.example.a7minworkoutapp.db.ViewModel
 import kotlinx.android.synthetic.main.activity_finish.*
-import kotlinx.coroutines.flow.Flow
 import java.text.SimpleDateFormat
 import java.util.*
 
 class FinishActivity : AppCompatActivity() {
 
-    lateinit var  viewModel :ViewModel
+    lateinit var  viewModel : ViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

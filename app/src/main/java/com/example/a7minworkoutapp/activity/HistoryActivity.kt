@@ -1,16 +1,17 @@
-package com.example.a7minworkoutapp
+package com.example.a7minworkoutapp.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import kotlinx.android.synthetic.main.activity_b_m_iactivity.*
-import kotlinx.android.synthetic.main.activity_finish.*
+import com.example.a7minworkoutapp.R
+import com.example.a7minworkoutapp.adapters.AdapterDates
+import com.example.a7minworkoutapp.db.ViewModel
 import kotlinx.android.synthetic.main.activity_history.*
 
-class History : AppCompatActivity() {
-    lateinit var  viewModel :ViewModel
+class HistoryActivity : AppCompatActivity() {
+    lateinit var  viewModel : ViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_history)

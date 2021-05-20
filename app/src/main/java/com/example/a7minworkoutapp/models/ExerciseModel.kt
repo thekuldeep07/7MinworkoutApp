@@ -1,4 +1,4 @@
- package com.example.a7minworkoutapp
+ package com.example.a7minworkoutapp.models
 
 class ExerciseModel(private var id :Int,
                     private var name :String,

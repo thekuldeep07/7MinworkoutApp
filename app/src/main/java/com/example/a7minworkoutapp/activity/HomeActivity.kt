@@ -1,14 +1,13 @@
-package com.example.a7minworkoutapp
+package com.example.a7minworkoutapp.activity
 
 import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.Toast
+import com.example.a7minworkoutapp.R
 import kotlinx.android.synthetic.main.activity_main.*
 
- class MainActivity : AppCompatActivity()
+ class HomeActivity : AppCompatActivity()
  {
     @SuppressLint("WrongViewCast")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,7 +15,7 @@ import kotlinx.android.synthetic.main.activity_main.*
         setContentView(R.layout.activity_main)
 
         llBMI.setOnClickListener {
-            val intent2 = Intent(this ,BMIactivity ::class.java)
+            val intent2 = Intent(this , BMIactivity ::class.java)
             startActivity(intent2)
         }
 
@@ -26,7 +25,7 @@ import kotlinx.android.synthetic.main.activity_main.*
         }
 
         llHistory.setOnClickListener {
-            val intent = Intent(this , History :: class.java)
+            val intent = Intent(this , HistoryActivity :: class.java)
             startActivity(intent)
 
         }
