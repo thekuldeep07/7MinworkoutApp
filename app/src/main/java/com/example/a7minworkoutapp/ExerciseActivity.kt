@@ -59,9 +59,18 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
     }
 
-    /**
-     * Here is Destroy function we will reset the rest timer to initial if it is running.
-     */
+    override fun onStop() {
+        if(tts!=null){
+            tts!!.stop()
+            tts!!.shutdown()
+        }
+
+        if(player!=null){
+            player!!.stop()
+        }
+
+        super.onStop()
+    }
     public override fun onDestroy() {
         if (restTimer != null) {
             restTimer!!.cancel()
@@ -82,6 +91,11 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             player!!.stop()
         }
         super.onDestroy()
+    }
+
+    override fun onResume() {
+        tts = TextToSpeech(this,this)
+        super.onResume()
     }
 
     /**
